@@ -1,0 +1,25 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<GridPane fx:controller="sample.Controller" prefHeight="375.0" prefWidth="400.0" alignment="CENTER"
+          xmlns:fx="http://javafx.com/fxml" hgap="10" vgap="10">
+
+        <VBox fx:id="vboxRoot" spacing="10" alignment="CENTER"
+              GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <Button text="Show students" fx:id="show" prefHeight="25" prefWidth="100"/>
+
+            <Button text="Add student" fx:id="add" prefHeight="25" prefWidth="100"/>
+
+            <Button text="Delete student" fx:id="delete" prefHeight="25" prefWidth="100"/>
+
+            <Button text="Create project" fx:id="create" prefHeight="25" prefWidth="100"/>
+
+            <Button text="Align project" fx:id="align" prefHeight="25" prefWidth="100"/>
+        </VBox>
+
+</GridPane>

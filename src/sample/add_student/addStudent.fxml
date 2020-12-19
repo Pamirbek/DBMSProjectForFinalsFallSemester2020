@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<?import javafx.geometry.Insets?>
+<GridPane xmlns="http://javafx.com/javafx" alignment="CENTER"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="sample.add_student.AddStudentController"
+          prefHeight="375.0" prefWidth="400.0">
+    <VBox spacing="10">
+        <Label>Name</Label>
+        <TextField fx:id="nameField"/>
+
+        <Label>Surname</Label>
+        <TextField fx:id="surnameField"/>
+
+        <Label>ID</Label>
+        <TextField fx:id="idField"/>
+
+        <Label>Course</Label>
+        <TextField fx:id="groupField"/>
+
+        <HBox spacing="40">
+            <Button fx:id="submit">Submit</Button>
+            <Button fx:id="back">Back</Button>
+        </HBox>
+    </VBox>
+
+</GridPane>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns="http://javafx.com/javafx" alignment="CENTER"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="sample.delete_student.DeleteStudentController"
+            prefHeight="375.0" prefWidth="400.0">
+    <VBox spacing="10">
+        <HBox spacing="40">
+            <Button fx:id="">Submit</Button>
+            <Button fx:id="back">Back</Button>
+        </HBox>
+    </VBox>
+</GridPane>
