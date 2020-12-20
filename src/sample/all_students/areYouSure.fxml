@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<?import javafx.geometry.Insets?>
+<GridPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="sample.all_students.AreYouSureController"
+            alignment = "CENTER">
+    <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
+    <VBox spacing="10" alignment="CENTER">
+
+        <Text fx:id="text">Are you sure you want do delete every student</Text>
+        <HBox spacing="20" alignment="CENTER_RIGHT">
+            <Button fx:id="yes">Yes</Button>
+            <Button fx:id="no">No</Button>
+        </HBox>
+    </VBox>
+
+</GridPane>

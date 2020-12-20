@@ -6,8 +6,7 @@ import java.sql.SQLException;
 
 public class DBConnector {
     public static Connection getConnection() throws SQLException {
-        Connection connection = DriverManager.getConnection("jdbs:mysql//localhost/db2", "root", "tipoparol");
 
-        return connection;
+        return DriverManager.getConnection("jdbc:mysql://localhost/db2?useSSL=false", "root", "tipoparol");
     }
 }

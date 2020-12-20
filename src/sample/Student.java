@@ -4,13 +4,13 @@ public class Student {
     private String name;
     private String surname;
     private int id;
-    private String group;
+    private String groupName;
 
-    public Student(String name, String surname, int id, String group) {
+    public Student(String name, String surname, int id, String groupName) {
         this.name = name;
         this.surname = surname;
         this.id = id;
-        this.group = group;
+        this.groupName = groupName;
     }
 
     public String getName() {
@@ -37,12 +37,12 @@ public class Student {
         this.id = id;
     }
 
-    public String getGroup() {
-        return group;
+    public String getGroupName() {
+        return groupName;
     }
 
-    public void setGroup(String group) {
-        this.group = group;
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
     }
 }
 

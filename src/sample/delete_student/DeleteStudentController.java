@@ -7,18 +7,51 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import sample.DBConnector;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 
 public class DeleteStudentController implements Initializable {
-    public Button back;
+    public Button delete, back;
+    public TextField idField;
+    public Text check;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        back.setOnAction(new EventHandler<ActionEvent>() {
+
+
+        delete.setOnAction(event -> {
+
+            Connection con = null;
+            try {
+                con = DBConnector.getConnection();
+
+                Statement st = con.createStatement();
+
+                String query = "DELETE FROM students " +
+                        "WHERE id = " + Integer.parseInt(idField.getText());
+
+
+                st.executeUpdate(query);
+
+                con.close();
+                System.out.println("Student was deleted successfully!");
+                check.setText("Student was deleted");
+
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        });
+
+        back.setOnAction(new EventHandler<>() {
             @Override
             public void handle(ActionEvent event) {
                 Stage stage;
@@ -31,6 +64,7 @@ public class DeleteStudentController implements Initializable {
                     e.printStackTrace();
                 }
 
+                assert root != null;
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();

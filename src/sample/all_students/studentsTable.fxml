@@ -1,31 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.cell.*?>
-<?import javafx.collections.*?>
 
-<?import javafx.scene.text.Text?>
-<?import javafx.geometry.Insets?>
-<?import javafx.collections.FXCollections?>
-<?import sample.Student?>
-<?import javafx.scene.control.cell.PropertyValueFactory?>
 <GridPane xmlns="http://javafx.com/javafx" alignment="CENTER"
           xmlns:fx="http://javafx.com/fxml"
           fx:controller="sample.all_students.StudentsTableController"
-          prefHeight="375.0" prefWidth="400.0">
+          prefHeight="575.0" prefWidth="400.0">
     <VBox spacing="10" alignment="CENTER">
 
-        <HBox spacing="40" alignment="CENTER_RIGHT">
-            <Button fx:id="back">Back</Button>
-        </HBox>
-        <Label style="-fx-font: NORMAL 20 Tahoma;" text="Address Book"
+        <Label style="-fx-font: NORMAL 20 Tahoma;" text="Students"
                GridPane.columnIndex="0" GridPane.rowIndex="0">
         </Label>
-        <TableView fx:id="tbData" GridPane.columnIndex="0"
+        <TableView prefWidth="370" fx:id="tbData" GridPane.columnIndex="0"
                    GridPane.rowIndex="1">
             <columns>
                 <TableColumn fx:id="name" text="Name">
@@ -43,23 +31,17 @@
                         <PropertyValueFactory property="id" />
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn fx:id="group" text="Group">
+                <TableColumn fx:id="groupName" text="Group">
                     <cellValueFactory>
-                        <PropertyValueFactory property="group" />
+                        <PropertyValueFactory property="groupName" />
                     </cellValueFactory>
                 </TableColumn>
             </columns>
-            <items>
-                <FXCollections fx:factory="observableArrayList">
-                    <Student name="Jacob" surname="Smith"
-                            id="101" group="COM19"/>
-                    <Student name="Emma" surname="Jones"
-                             id="102" group="COM19"/>
-                    <Student name="Michael" surname="Brown"
-                             id="103" group="COM19"/>
-                </FXCollections>
-            </items>
         </TableView>
+        <HBox spacing="20" alignment="CENTER_RIGHT">
+            <Button fx:id="deleteAll">Delete All</Button>
+            <Button fx:id="back">Back</Button>
+        </HBox>
     </VBox>
 
 </GridPane>
