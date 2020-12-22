@@ -1,4 +1,4 @@
-package sample.delete_student;
+package sample.delete_project;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -19,7 +19,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 
-public class DeleteStudentController implements Initializable {
+public class DeleteProjectController implements Initializable {
     public Button delete, back;
     public TextField idField;
     public Text check;
@@ -40,14 +40,10 @@ public class DeleteStudentController implements Initializable {
                         "WHERE id = " + Integer.parseInt(idField.getText());
                 st.executeUpdate(query);
 
-                query = "DELETE FROM students " +
-                        "WHERE id = " + Integer.parseInt(idField.getText());
-                st.executeUpdate(query);
-
 
                 con.close();
-                System.out.println("Student was deleted successfully!");
-                check.setText("Student was deleted");
+                System.out.println("Project was deleted successfully!");
+                check.setText("Project was deleted");
 
             } catch (SQLException throwables) {
                 throwables.printStackTrace();

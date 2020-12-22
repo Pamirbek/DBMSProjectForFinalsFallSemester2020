@@ -11,9 +11,9 @@
 
             <Button text="Delete student" fx:id="delete" prefHeight="25" prefWidth="100"/>
 
-            <Button text="Create project" fx:id="create" prefHeight="25" prefWidth="100"/>
+            <Button text="Add project" fx:id="addProject" prefHeight="25" prefWidth="100"/>
 
-            <Button text="Align project" fx:id="align" prefHeight="25" prefWidth="100"/>
+            <Button text="Delete project" fx:id="deleteProject" prefHeight="25" prefWidth="100"/>
         </VBox>
 
 </GridPane>

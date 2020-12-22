@@ -4,15 +4,18 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.scene.text.Text?>
-<GridPane xmlns="http://javafx.com/javafx" alignment="CENTER"
+<?import javafx.geometry.Insets?>
+<GridPane xmlns="http://javafx.com/javafx"
           xmlns:fx="http://javafx.com/fxml"
-          fx:controller="sample.delete_student.DeleteStudentController"
-          prefHeight="375.0" prefWidth="400.0">
+          fx:controller="sample.delete_project.DeleteProjectController"
+          prefHeight="375.0" prefWidth="400.0"
+          alignment="CENTER">
+    <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
     <VBox spacing="10" alignment="CENTER">
         <Label>Please type the id of a student</Label>
         <TextField fx:id="idField"/>
         <HBox spacing="40" alignment="CENTER">
-            <Button fx:id="delete">Delete</Button>
+            <Button fx:id="delete">Delete Project</Button>
             <Button fx:id="back">Back</Button>
         </HBox>
 

@@ -10,6 +10,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.GridPane;
+import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import java.io.IOException;
@@ -26,7 +28,6 @@ import sample.DBConnector;
 import sample.Student;
 
 public class StudentsTableController implements Initializable {
-
     @FXML
     private TableView<Student> tbData;
 
@@ -82,19 +83,22 @@ public class StudentsTableController implements Initializable {
         deleteAll.setOnAction(new EventHandler<>() {
             @Override
             public void handle(ActionEvent event) {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("areYouSure.fxml"));
-                Parent root1 = null;
+                Stage stage = (Stage) deleteAll.getScene().getWindow();
+                stage.close();
+
+
+                Parent root = null;
+
+                stage = (Stage) deleteAll.getScene().getWindow();
                 try {
-                    root1 = fxmlLoader.load();
+                    root = FXMLLoader.load(getClass().getResource("areYouSure.fxml"));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                Stage stage = new Stage();
-                stage.initModality(Modality.APPLICATION_MODAL);
-                stage.initStyle(StageStyle.DECORATED);
-                stage.setTitle("Are you sure?");
-                assert root1 != null;
-                stage.setScene(new Scene(root1));
+
+                assert root != null;
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
                 stage.show();
 
             }

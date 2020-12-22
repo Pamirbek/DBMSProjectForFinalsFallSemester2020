@@ -7,6 +7,7 @@ import java.sql.SQLException;
 public class DBConnector {
     public static Connection getConnection() throws SQLException {
 
-        return DriverManager.getConnection("jdbc:mysql://localhost/db2?useSSL=false", "root", "tipoparol");
+        return DriverManager.getConnection("jdbc:mysql://localhost/db2?allowPublicKeyRetrieval=true&useSSL=false",
+                "root", "tipoparol");
     }
 }

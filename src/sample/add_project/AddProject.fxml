@@ -4,22 +4,22 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.scene.text.Text?>
-<GridPane xmlns="http://javafx.com/javafx" alignment="CENTER"
+<?import javafx.geometry.Insets?>
+<GridPane xmlns="http://javafx.com/javafx"
           xmlns:fx="http://javafx.com/fxml"
-          fx:controller="sample.add_student.AddStudentController"
-          prefHeight="375.0" prefWidth="400.0">
+          fx:controller="sample.add_project.AddProjectController"
+          prefHeight="375.0" prefWidth="400.0"
+          alignment = "CENTER">
+    <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
     <VBox spacing="10" alignment="CENTER">
-        <Label>Name</Label>
-        <TextField  fx:id="nameField"/>
+        <Label>Name of project</Label>
+        <TextField  fx:id="projectNameField"/>
 
-        <Label>Surname</Label>
-        <TextField fx:id="surnameField"/>
-
-        <Label>ID</Label>
+        <Label>Id of a student</Label>
         <TextField fx:id="idField"/>
 
-        <Label>Course</Label>
-        <TextField fx:id="groupField"/>
+        <Label>Description</Label>
+        <TextField fx:id="projectDescriptionField"/>
 
         <HBox spacing="40" alignment="CENTER">
             <Button fx:id="submit">Submit</Button>

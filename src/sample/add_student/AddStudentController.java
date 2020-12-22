@@ -29,7 +29,7 @@ public class AddStudentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        back.setOnAction(new EventHandler<ActionEvent>() {
+        back.setOnAction(new EventHandler<>() {
             @Override
             public void handle(ActionEvent event) {
                 Stage stage;
@@ -52,7 +52,7 @@ public class AddStudentController implements Initializable {
         submit.setOnAction(event -> {
 
             if (!nameField.getText().isEmpty() && !surnameField.getText().isEmpty() && !idField.getText().isEmpty()
-            && !groupField.getText().isEmpty()){
+            && !groupField.getText().isEmpty()) {
                 String idFieldStr = idField.getText();
                 if (idFieldStr.matches("[0-9]+")) {
 

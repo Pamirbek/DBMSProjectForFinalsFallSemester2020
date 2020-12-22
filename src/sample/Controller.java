@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -18,7 +19,7 @@ import java.util.ResourceBundle;
 
 
 public class Controller implements Initializable {
-    public javafx.scene.control.Button show, add, delete, create, align;
+    public javafx.scene.control.Button show, add, delete, addProject, deleteProject;
     public VBox vboxRoot;
 
     @Override
@@ -31,7 +32,12 @@ public class Controller implements Initializable {
             Statement st = con.createStatement();
 
             String query = "CREATE TABLE IF NOT EXISTS students (" +
-                    "name varchar(50), surname varchar(50), id INT PRIMARY KEY ,groupName varchar(7))";
+                    "name varchar(50), surname varchar(50), id INT ,groupName varchar(7)," +
+                    "PRIMARY KEY (id))";
+            st.executeUpdate(query);
+            query = "CREATE TABLE IF NOT EXISTS projects (" +
+                    "projectName varchar(75) NOT NULL, id int NOT NULL, description TEXT DEFAULT NULL," +
+                    "PRIMARY KEY (id), FOREIGN KEY (id) REFERENCES projects(id))";
             st.executeUpdate(query);
 
             con.close();
@@ -99,9 +105,45 @@ public class Controller implements Initializable {
             }
         });
 
-        create.setOnAction(event -> System.out.println("You clicked me!"));
+        addProject.setOnAction(new EventHandler<>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Stage stage;
+                Parent root = null;
 
-        align.setOnAction(event -> System.out.println("You clicked me!"));
+                stage = (Stage) add.getScene().getWindow();
+                try {
+                    root = FXMLLoader.load(getClass().getResource("add_project/AddProject.fxml"));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                assert root != null;
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }
+        });
+
+        deleteProject.setOnAction(new EventHandler<>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Stage stage;
+                Parent root = null;
+
+                stage = (Stage) add.getScene().getWindow();
+                try {
+                    root = FXMLLoader.load(getClass().getResource("delete_project/DeleteProject.fxml"));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                assert root != null;
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }
+        });
 
 
     }
