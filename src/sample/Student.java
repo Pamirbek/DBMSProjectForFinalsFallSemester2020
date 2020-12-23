@@ -44,5 +44,6 @@ public class Student {
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
+
 }
 

@@ -37,7 +37,7 @@ public class DeleteStudentController implements Initializable {
                 Statement st = con.createStatement();
 
                 String query = "DELETE FROM projects " +
-                        "WHERE id = " + Integer.parseInt(idField.getText());
+                        "WHERE projectId = " + Integer.parseInt(idField.getText());
                 st.executeUpdate(query);
 
                 query = "DELETE FROM students " +

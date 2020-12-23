@@ -61,6 +61,21 @@ public class AreYouSureController implements Initializable {
             Stage stage = (Stage) yes.getScene().getWindow();
             stage.close();
 
+
+            Parent root = null;
+
+            stage = (Stage) no.getScene().getWindow();
+            try {
+                root = FXMLLoader.load(getClass().getResource("../mainPage.fxml"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            assert root != null;
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
         });
     }
 }

@@ -41,7 +41,7 @@ public class AddProjectController implements Initializable {
 
                         Statement st = con.createStatement();
 
-                        String query = "INSERT INTO projects (projectName, id, description)" +
+                        String query = "INSERT INTO projects (projectName, projectId, description)" +
                                 "VALUES ( '" + projectNameField.getText() + "', " +
                                 "'" + idField.getText() + "', " +
                                 "'" + projectDescriptionField.getText() + "')";
@@ -59,7 +59,7 @@ public class AddProjectController implements Initializable {
             } else { check.setText("One or several forms are empty"); }
         });
 
-        back.setOnAction(new EventHandler<ActionEvent>() {
+        back.setOnAction(new EventHandler<>() {
             @Override
             public void handle(ActionEvent event) {
                 Stage stage;

@@ -6,7 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -36,8 +35,8 @@ public class Controller implements Initializable {
                     "PRIMARY KEY (id))";
             st.executeUpdate(query);
             query = "CREATE TABLE IF NOT EXISTS projects (" +
-                    "projectName varchar(75) NOT NULL, id int NOT NULL, description TEXT DEFAULT NULL," +
-                    "PRIMARY KEY (id), FOREIGN KEY (id) REFERENCES projects(id))";
+                    "projectName varchar(75) NOT NULL, projectId int NOT NULL, description TEXT DEFAULT NULL," +
+                    "PRIMARY KEY (projectId), FOREIGN KEY (projectId) REFERENCES students(id))";
             st.executeUpdate(query);
 
             con.close();
