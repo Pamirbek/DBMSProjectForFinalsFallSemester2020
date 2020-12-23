@@ -1,6 +1,6 @@
 # Database Management System For Object Oriented Programming Fall Semester of 2020
 
-Project uses Java, JavaFX, MySql. For good work of project you need to create database with name "db2". The tables are not required for creating.
+Project uses Java, JavaFX, MySql. <b>To make the project work you need to create database with name "db2". The tables are not required for creating.</b>
 
 Our project stores students into the MySQL table and projects into another table and links them. This makes to keep in track the who did the project, who did not and project name, description.
 
