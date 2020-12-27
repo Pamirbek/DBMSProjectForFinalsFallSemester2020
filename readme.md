@@ -4,6 +4,8 @@ Project uses Java, JavaFX, MySql. <b>To make the project work you need to create
   
 Team members: Pamirbek Almazbekov, Zhibek Mukhtarbekova
 
+YouTube video: https://youtu.be/twM3ncXrVJ0
+
 Our project stores students into the MySQL table and projects into another table and links them. This makes to keep in track the who did the project, who did not and project name, description.
 
 <img src="./images/main%20scene.png" alt="Main page" width="250"/><br />
